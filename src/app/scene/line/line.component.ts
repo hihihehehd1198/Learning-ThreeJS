@@ -45,7 +45,7 @@ export class LineComponent implements OnInit, AfterViewInit {
     const camera = new THREE.PerspectiveCamera(100, 1, 0.1, 2000)
     const renderer = new THREE.WebGLRenderer()
     this.rendererDom.appendChild(this.backgroundScene.nativeElement, renderer.domElement)
-    renderer.setSize(400, 400)
+    renderer.setSize(500, 500)
 
     camera.position.set(0, 0, 30);
 
@@ -141,24 +141,95 @@ export class LineComponent implements OnInit, AfterViewInit {
     pointG.push(new THREE.Vector3(1.25, 1.4, 0))
     pointG.push(new THREE.Vector3(0.5, 1, 0))
     pointG.push(new THREE.Vector3(0, 0.25, 0))
-    pointG.push(new THREE.Vector3(0, 0, 0))
-    pointG.push(new THREE.Vector3(-1, -1, 0))
+    pointG.push(new THREE.Vector3(-0.1, 0, 0))
+    pointG.push(new THREE.Vector3(-0.3, -0.5, 0))
+    pointG.push(new THREE.Vector3(-0.3, -1.5, 0))
+
+    // pointG.push(new THREE.Vector3(-0.5, -0.8, 0))
+    // pointG.push(new THREE.Vector3(-1, -1, 0))
+    // pointG.push(new THREE.Vector3(0.2, -1.9, 0))
+
+
+    pointG.push(new THREE.Vector3(0.3, -2.5, 0))
+    pointG.push(new THREE.Vector3(0.4, -2.6, 0))
+    pointG.push(new THREE.Vector3(0.6, -2.7, 0))
+    pointG.push(new THREE.Vector3(0.8, -2.8, 0))
+    pointG.push(new THREE.Vector3(1, -2.9, 0))
+    pointG.push(new THREE.Vector3(1.2, -3, 0))
+
+
+    pointG.push(new THREE.Vector3(1.5, -3.1, 0))
+    pointG.push(new THREE.Vector3(2, -3.2, 0))
+
+
+    pointG.push(new THREE.Vector3(2.5, -3.1, 0))
+    pointG.push(new THREE.Vector3(3.6, -3.0, 0))
+    pointG.push(new THREE.Vector3(3.6, -2.9, 0))
+
+    pointG.push(new THREE.Vector3(3.7, -2.9, 0))
+    pointG.push(new THREE.Vector3(3.9, -2.8, 0))
+    pointG.push(new THREE.Vector3(4.1, -2.7, 0))
+    pointG.push(new THREE.Vector3(4.2, -2.6, 0))
+    pointG.push(new THREE.Vector3(4.3, -2.5, 0))
+
+    pointG.push(new THREE.Vector3(4.33, -2.4, 0))
+    pointG.push(new THREE.Vector3(4.44, -2.3, 0))
+
+    pointG.push(new THREE.Vector3(4.55, -2.2, 0))
+    pointG.push(new THREE.Vector3(4.66, -2.1, 0))
+
+
+    pointG.push(new THREE.Vector3(4.77, -1.5, 0))
+    pointG.push(new THREE.Vector3(4.88, -1, 0))
+    pointG.push(new THREE.Vector3(4., -1, 0))
+    pointG.push(new THREE.Vector3(3, -1, 0))
+
+    // pointG.push(new THREE.Vector3(2.5, -2.3, 0))
+
+    // pointG.push(new THREE.Vector3(0, -2, 0))
     // pointG.push(new THREE.Vector3(1.25, 1, 0))
     // pointG.push(new THREE.Vector3(2, 1., 0))
     // pointG.push(new THREE.Vector3(3, 5, 0))
 
-    
+
 
     const lineGeo6Color = new THREE.LineBasicMaterial({ color: 'yellow' })
     const geometry6 = new THREE.BufferGeometry().setFromPoints(pointG)
     const line6 = new THREE.Line(geometry6, lineGeo6Color)
     line6.position.x = 32
+    line6.position.y = 3.2
 
 
     scene.add(line6)
     renderer.render(scene, camera)
 
+    //n  in "Nam"
+    const geometry7 = geometry5.clone()
+    const line7 = new THREE.Line(geometry7, lineGeo5Color)
+    line7.position.x = 42
+    scene.add(line7)
+    renderer.render(scene, camera)
 
+    const geomtry8 = geometryA.clone()
+
+    const line8 = new THREE.Line(geomtry8, lineGeo6Color)
+    scene.add(line8)
+    line8.position.x = 50
+    renderer.render(scene, camera)
+
+
+    const pointM = []
+    pointM.push(new THREE.Vector3(0, 0, 0))
+    pointM.push(new THREE.Vector3(0, 5, 0))
+    pointM.push(new THREE.Vector3(2.5, 2.5, 0))
+    pointM.push(new THREE.Vector3(5, 5, 0))
+    pointM.push(new THREE.Vector3(5, 0, 0))
+    // pointN.push(new THREE.Vector3(0, 5, 0))
+    const geometryM = new THREE.BufferGeometry().setFromPoints(pointM)
+    const line9 = new THREE.Line(geometryM, lineGeo5Color)
+    line9.position.x = 58
+    scene.add(line9)
+    renderer.render(scene, camera)
   }
-
+  
 }
