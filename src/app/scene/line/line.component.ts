@@ -1,6 +1,7 @@
 import { animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, inject, Inject, OnInit, Renderer2, ViewChild, AfterViewInit, HostListener } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, Renderer2, ViewChild, AfterViewInit, HostListener } from '@angular/core';
+
 import * as THREE from 'three';
 
 @Component({
@@ -137,10 +138,12 @@ export class LineComponent implements OnInit, AfterViewInit {
     pointG.push(new THREE.Vector3(4.8, 0.5, 0))
     pointG.push(new THREE.Vector3(4.5, 1, 0))
     pointG.push(new THREE.Vector3(3, 1.5, 0))
+
     pointG.push(new THREE.Vector3(2, 1.5, 0))
     pointG.push(new THREE.Vector3(1.25, 1.4, 0))
     pointG.push(new THREE.Vector3(0.5, 1, 0))
     pointG.push(new THREE.Vector3(0, 0.25, 0))
+
     pointG.push(new THREE.Vector3(-0.1, 0, 0))
     pointG.push(new THREE.Vector3(-0.3, -0.5, 0))
     pointG.push(new THREE.Vector3(-0.3, -1.5, 0))
@@ -154,6 +157,7 @@ export class LineComponent implements OnInit, AfterViewInit {
     pointG.push(new THREE.Vector3(0.4, -2.6, 0))
     pointG.push(new THREE.Vector3(0.6, -2.7, 0))
     pointG.push(new THREE.Vector3(0.8, -2.8, 0))
+
     pointG.push(new THREE.Vector3(1, -2.9, 0))
     pointG.push(new THREE.Vector3(1.2, -3, 0))
 
@@ -231,5 +235,5 @@ export class LineComponent implements OnInit, AfterViewInit {
     scene.add(line9)
     renderer.render(scene, camera)
   }
-  
+
 }

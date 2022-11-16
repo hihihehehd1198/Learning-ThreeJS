@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CircleComponent } from './scene/circle/circle.component';
 import { LineComponent } from './scene/line/line.component';
+import { RotateBackgroundComponent } from './scene/rotate-background/rotate-background.component';
 
 @NgModule({
   declarations: [
+
   ],
   imports: [
     BrowserModule,
