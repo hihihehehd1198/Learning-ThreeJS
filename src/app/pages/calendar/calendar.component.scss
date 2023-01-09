@@ -1,0 +1,27 @@
+.button-group{
+    button {
+        width:max-content;
+        &:last-of-type{
+            margin-left: 10px;
+        }
+    }
+    
+    padding: 20px 0
+}
+
+.table-group{
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: -5px;
+    tr td{
+        border: 1px solid black;
+        padding: 20px;
+        min-width: 50px;
+        text-align: center;
+        &.cell-date{
+            display: table-cell;
+        }
+    }
+}
+

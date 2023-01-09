@@ -1,0 +1,51 @@
+<p>calendar works!</p>
+
+
+
+
+<div class="button-group">
+
+    <button (click)="nextWeek()">
+        Next
+    </button>
+
+    <button (click)="prevWeek()">
+        Prev
+    </button>
+</div>
+
+
+<table class="table-group">
+    <thead>
+        <tr>
+            <td>Date</td>
+            <td *ngFor="let item1 of listDate">
+                {{item1}}
+            </td>
+        </tr>
+        <tr>
+            <td>Time\Day</td>
+            <td *ngFor="let item of listDay">
+                {{item}}
+            </td>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listEventDate, let i =index">
+            <td class="cell-date">
+                <div>
+                    {{listTime[i].id}}
+                </div>
+                <div>
+                    {{listTime[i].time}}
+                </div>
+            </td>
+            
+            <td *ngFor="let item1 of item">
+                {{item1}}
+            </td>
+        </tr>
+
+    </tbody>
+</table>
