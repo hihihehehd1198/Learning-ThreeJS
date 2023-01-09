@@ -90,12 +90,12 @@ export class CalendarComponent implements OnInit {
 
         if (date.getTime() <= date02_26.getTime()) {
           if ((j === 3 || j === 4)) {
-            (i === 3) ? timeList.push('test') : timeList.push('')
+            (i === 3) ? timeList.push('toi pham  tl1') : timeList.push('')
 
 
 
           } else if (j === 2) {
-            (i === 3) ? timeList.push('test1') : timeList.push('')
+            (i === 3) ? timeList.push('toi pham') : timeList.push('')
 
           } else {
             timeList.push('')
@@ -107,7 +107,7 @@ export class CalendarComponent implements OnInit {
               case 1:
                 timeList.push('daicuongvanhoa 1 ')
                 break;
-              case 3:
+              case 2:
                 timeList.push('daicuongvanhoa 2 ')
                 break;
               case 4:
@@ -117,31 +117,34 @@ export class CalendarComponent implements OnInit {
                 timeList.push('')
                 break;
             }
+
           } else {
-            if (false) {
+            // if (false) {
 
-            } else {
+            // } else {
+            switch (j) {
+              case 2:
+                i === 3 ? timeList.push('thuong mai 2') : timeList.push('')
+                break;
+              case 3:
+                ((i === 3 || i === 4 || i === 5 )) ? timeList.push('aerobic') : timeList.push('')
+                break;
+              case 4:
+                i === 1 ? timeList.push('thuong mai 2 - TL ') : timeList.push('')
+                break;
 
-              switch (j) {
-                case 2:
-                  i === 4 ? timeList.push('thuong mai 2') : timeList.push('')
-                  break;
+              case 5:
+                i === 5 ? timeList.push('thuong mai 2 - TL') : timeList.push('')
+                break;
 
-                case 4:
-                  i === 4 ? timeList.push('thuong mai 2 - TL ') : timeList.push('')
-                  break;
 
-                case 5:
-                  i === 4 ? timeList.push('thuong mai 2 - TL') : timeList.push('')
-                  break;
-
-                default:
-                  timeList.push('')
-                  break;
-              }
+              default:
+                timeList.push('')
+                break;
             }
-
           }
+
+
 
         } else if (date.getTime() <= date04_23.getTime())
           if (date.getTime() >= date03_20.getTime() && i === 2) {
