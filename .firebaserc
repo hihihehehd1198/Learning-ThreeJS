@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "thoikhoabieu-a5075"
+  },
+  "targets": {
+    "thoikhoabieu-a5075": {
+      "hosting": {
+        "learning-three": [
+          "thoikhoabieu-a5075"
+        ]
+      }
+    }
+  }
+}
