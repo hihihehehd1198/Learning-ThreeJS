@@ -1,5 +1,5 @@
 <h1>
-Thời khóa biểu từ ngày 02-01 đến 02-07
+  Thời khóa biểu từ ngày 02-01 đến 02-07
 </h1>
 <div class="button-group">
   <button (click)="prevWeek()">Tuần trước</button>
@@ -9,15 +9,21 @@ Thời khóa biểu từ ngày 02-01 đến 02-07
 <table class="table-group">
   <thead>
     <tr>
-      <td>Day</td>
-      <td *ngFor="let item1 of listDate">
-        {{ item1 }}
+      <!-- let item of listEventDate; let i = index -->
+      <td>Ngày thứ</td>
+      <td [appCustomStyle]="listDay[k]"  *ngFor="let item of listDay; let k = index">
+        {{ listDate[k] }}
       </td>
     </tr>
     <tr>
-      <td>Time\Date</td>
-      <td *ngFor="let item of listDay">
-        {{ item }}
+      <td>
+        <div class="custom-label-date-time">
+          <div>Ngày</div>
+          <div>Giờ</div>
+        </div>
+      </td>
+      <td [appCustomStyle]="listDay[l]"  *ngFor="let item of listDay; let l = index">
+        {{ item | formatDate }}
       </td>
     </tr>
   </thead>
@@ -28,11 +34,11 @@ Thời khóa biểu từ ngày 02-01 đến 02-07
           {{ listTime[i].id }}
         </div>
         <div>
-          {{ listTime[i].time }}
+          {{ listTime[i].time  }}
         </div>
       </td>
 
-      <td *ngFor="let item1 of item">
+      <td [appCustomStyle]="listDay[j]" *ngFor="let item1 of item; let j= index">
         {{ item1 }}
       </td>
     </tr>

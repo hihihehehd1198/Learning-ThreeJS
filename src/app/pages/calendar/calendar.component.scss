@@ -1,28 +1,54 @@
-.button-group{
+.button-group {
     button {
-        width:max-content;
-        padding:20px;
-        &:last-of-type{
+        width: max-content;
+        padding: 20px;
+
+        &:last-of-type {
             margin-left: 10px;
         }
     }
-    
+
     padding-bottom: 20px;
 }
 
-.table-group{
+.table-group {
     display: table;
     table-layout: fixed;
     border-collapse: collapse;
     margin: -5px;
-    tr td{
+
+    tr td {
         border: 1px solid black;
         padding: 20px;
         width: 100px;
         text-align: center;
-        &.cell-date{
+
+        &.cell-date {
             display: table-cell;
         }
     }
 }
 
+.custom-label-date-time {
+
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    &>div:first-child {
+        text-align: right;
+
+    }
+
+    &>div:last-child {
+        text-align: left;
+    }
+
+    &::after {
+        content: '';
+        border: 1px solid black;
+        width: 150%;
+        transform: rotate(27deg) translateY(-3px) translateX(-30px)
+    }
+
+}

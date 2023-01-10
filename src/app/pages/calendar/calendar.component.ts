@@ -1,5 +1,7 @@
 import { CommonModule, NgSwitchCase } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { CustomStyleDirective } from './directives/custom-style.directive';
+import { FormatDatePipe } from './pipes/format-date.pipe';
 
 
 
@@ -36,7 +38,7 @@ enum UNIT {
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, CustomStyleDirective, FormatDatePipe]
 })
 
 
@@ -53,6 +55,8 @@ export class CalendarComponent implements OnInit {
 
   }
   currentDay = new Date();
+
+
   listDay: string[] = []
   listDate: any = {}
   listTime: any[] = []
@@ -69,7 +73,7 @@ export class CalendarComponent implements OnInit {
 
         const date = new Date(this.listDay[j])
         date.setHours(0)
-        console.log(date.getHours())
+        // console.log(date.getHours())
 
         const date02_01 = new Date('2023-01-02')
         const date02_26 = new Date('2023-02-26')
@@ -225,7 +229,7 @@ export class CalendarComponent implements OnInit {
   }
   renderListDate() {
     for (let i = 0; i < 7; i++) {
-      i === 0 ? this.listDate[0] = 'CN' : this.listDate[i] = `thứ ${i + 1}`
+      i === 0 ? this.listDate[0] = 'Chủ nhật' : this.listDate[i] = `thứ ${i + 1}`
     }
     this.listDate = Object.values(this.listDate)
   }
