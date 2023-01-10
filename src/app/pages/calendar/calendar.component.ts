@@ -70,7 +70,6 @@ export class CalendarComponent implements OnInit {
         const date = new Date(this.listDay[j])
         date.setHours(0)
         console.log(date.getHours())
-        const unit = this.listTime[i]['id']
 
         const date02_01 = new Date('2023-01-02')
         const date02_26 = new Date('2023-02-26')
@@ -83,19 +82,15 @@ export class CalendarComponent implements OnInit {
 
         const date04_23 = new Date('2023-04-23')
 
-        // debugger
-        // console.log(date.getTime(), date02_26.getTime(), date.getTime() < date02_26.getTime())
-
-
 
         if (date.getTime() <= date02_26.getTime()) {
           if ((j === 3 || j === 4)) {
-            (i === 3) ? timeList.push('toi pham  tl1') : timeList.push('')
+            (i === 3 && j === 3) ? timeList.push('Tội phạm TL1 B602') : (i === 3 && j === 4) ? timeList.push('Tội phạm TL1 B402') : timeList.push('')
 
 
 
           } else if (j === 2) {
-            (i === 3) ? timeList.push('toi pham') : timeList.push('')
+            (i === 3) ? timeList.push('Tội phạm B205') : timeList.push('')
 
           } else {
             timeList.push('')
@@ -105,13 +100,13 @@ export class CalendarComponent implements OnInit {
 
             switch (j) {
               case 1:
-                timeList.push('daicuongvanhoa 1 ')
+                timeList.push('Đại cương C201 ')
                 break;
               case 2:
-                timeList.push('daicuongvanhoa 2 ')
+                timeList.push('Đại cương TL1 E402 ')
                 break;
               case 4:
-                timeList.push('daicuongvanhoa 2')
+                timeList.push('Đại cương TL1 B602  ')
                 break;
               default:
                 timeList.push('')
@@ -119,22 +114,20 @@ export class CalendarComponent implements OnInit {
             }
 
           } else {
-            // if (false) {
 
-            // } else {
             switch (j) {
+
               case 2:
-                i === 3 ? timeList.push('thuong mai 2') : timeList.push('')
+                i === 3 ? timeList.push('Thương mại  B204') : (((i === 0 || i === 1) && date.getTime() <= date04_02.getTime()) ? timeList.push('Lịch sử đảng B204') : timeList.push(''))
                 break;
               case 3:
-                ((i === 3 || i === 4 || i === 5 )) ? timeList.push('aerobic') : timeList.push('')
+                ((i === 3 || i === 4 || i === 5) && date.getTime() >= date03_20.getTime()) ? timeList.push('Aerobic Ngoai02') : timeList.push('')
                 break;
               case 4:
-                i === 1 ? timeList.push('thuong mai 2 - TL ') : timeList.push('')
+                i === 1 ? timeList.push('Thương mại TL2 - E401') : timeList.push('')
                 break;
-
               case 5:
-                i === 5 ? timeList.push('thuong mai 2 - TL') : timeList.push('')
+                i === 5 ? timeList.push('Thương mại TL2 - E401') : ((i === 1 && date.getTime() <= date04_02.getTime()) ? timeList.push('Lịch sử đảng TL1 - B401') : timeList.push(''))
                 break;
 
 
@@ -148,26 +141,45 @@ export class CalendarComponent implements OnInit {
 
         } else if (date.getTime() <= date04_23.getTime())
           if (date.getTime() >= date03_20.getTime() && i === 2) {
-            // timeList.push('daicuongvanhoa')
+
             switch (j) {
               case 1:
-                timeList.push('daicuongvanhoa 1 ')
+                timeList.push('Đại cương C201 ')
                 break;
-              case 3:
-                timeList.push('daicuongvanhoa 2 ')
+              case 2:
+                timeList.push('Đại cương TL1 E402 ')
                 break;
               case 4:
-                timeList.push('daicuongvanhoa 2')
+                timeList.push('Đại cương TL1 B602  ')
                 break;
               default:
                 timeList.push('')
                 break;
             }
           } else
-
-            timeList.push('')
+            switch (j) {
+              // case
+              case 2:
+                ((i === 0 || i === 1) && date.getTime() <= date04_02.getTime()) ? timeList.push('Lịch sử đảng B204') : timeList.push('')
+                break;
+              case 3:
+                ((i === 3 || i === 4 || i === 5) && date.getTime() >= date03_20.getTime()) ? timeList.push('Aerobic Ngoai02') : timeList.push('')
+                break;
+              default:
+                timeList.push('')
+                break;
+            }
         else if (date.getDate() <= date07_02.getTime()) {
-          timeList.push('')
+          switch (j) {
+            // case
+
+            case 3:
+              ((i === 3 || i === 4 || i === 5) && date.getTime() <= date07_02.getTime()) ? timeList.push('Aerobic Ngoai02') : timeList.push('')
+              break;
+            default:
+              timeList.push('')
+              break;
+          }
         } else {
           timeList.push('')
         }
@@ -213,7 +225,7 @@ export class CalendarComponent implements OnInit {
   }
   renderListDate() {
     for (let i = 0; i < 7; i++) {
-      i === 0 ? this.listDate[0] = 'CN' : this.listDate[i] = `thu ${i + 1}`
+      i === 0 ? this.listDate[0] = 'CN' : this.listDate[i] = `thứ ${i + 1}`
     }
     this.listDate = Object.values(this.listDate)
   }

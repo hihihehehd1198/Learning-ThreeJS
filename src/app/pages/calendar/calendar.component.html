@@ -1,20 +1,21 @@
-<p>calendar works!</p>
-
+<h1>
+Thời khóa biểu từ ngày 02-01 đến 02-07
+</h1>
 <div class="button-group">
-  <button (click)="prevWeek()">Prev</button>
-  <button (click)="nextWeek()">Next</button>
+  <button (click)="prevWeek()">Tuần trước</button>
+  <button (click)="nextWeek()">Tuần kế</button>
 </div>
 
 <table class="table-group">
   <thead>
     <tr>
-      <td>Date</td>
+      <td>Day</td>
       <td *ngFor="let item1 of listDate">
         {{ item1 }}
       </td>
     </tr>
     <tr>
-      <td>Time\Day</td>
+      <td>Time\Date</td>
       <td *ngFor="let item of listDay">
         {{ item }}
       </td>
