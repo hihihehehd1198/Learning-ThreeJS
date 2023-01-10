@@ -20,6 +20,7 @@
     tr td {
         border: 1px solid black;
         padding: 20px;
+        min-width: 100px;
         width: 100px;
         text-align: center;
 
@@ -48,7 +49,7 @@
         content: '';
         border: 1px solid black;
         width: 150%;
-        transform: rotate(27deg) translateY(-3px) translateX(-30px)
+        transform: rotate(27deg) translateY(-3%) translateX(-20%)
     }
 
 }
