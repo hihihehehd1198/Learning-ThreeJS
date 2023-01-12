@@ -5,6 +5,7 @@ import { AppComponent } from './app/app.component';
 
 import { AppModule } from './app/app.module';
 import { CalendarComponent } from './app/pages/calendar/calendar.component';
+import { Pages1Component } from './app/pages/pages1/pages1.component';
 import { CircleComponent } from './app/scene/circle/circle.component';
 import { LineComponent } from './app/scene/line/line.component';
 import { RotateBackgroundComponent } from './app/scene/rotate-background/rotate-background.component';
@@ -21,3 +22,5 @@ if (environment.production) {
 bootstrapApplication(CalendarComponent)
 
 // bootstrapApplication(RotateBackgroundComponent)
+
+// bootstrapApplication(Pages1Component)

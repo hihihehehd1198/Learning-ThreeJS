@@ -61,9 +61,7 @@ export class CalendarComponent implements OnInit {
   listDate: any = {}
   listTime: any[] = []
   listEventDate: any[] = []
-  listSubject = [
-    { id: "5,6", }
-  ]
+  
   renderEventDate() {
     this.listEventDate = []
     for (let i = 0; i < 6; i++) {
@@ -192,6 +190,7 @@ export class CalendarComponent implements OnInit {
       }
       this.listEventDate.push(timeList)
     }
+  console.log('defaultDay : ', this.currentDay)
   }
   // month = this.currentDay.getMonth()
   renderListTime() {
