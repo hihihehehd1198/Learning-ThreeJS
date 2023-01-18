@@ -11,7 +11,7 @@
     <tr>
       <!-- let item of listEventDate; let i = index -->
       <td>Ngày thứ</td>
-      <td [appCustomStyle]="listDay[k]"  *ngFor="let item of listDay; let k = index">
+      <td [appCustomStyle]="listDay[k]" *ngFor="let item of listDay; let k = index">
         {{ listDate[k] }}
       </td>
     </tr>
@@ -22,7 +22,7 @@
           <div>Giờ</div>
         </div>
       </td>
-      <td [appCustomStyle]="listDay[l]"  *ngFor="let item of listDay; let l = index">
+      <td [appCustomStyle]="listDay[l]" *ngFor="let item of listDay; let l = index">
         {{ item | formatDate }}
       </td>
     </tr>
@@ -34,7 +34,7 @@
           {{ listTime[i].id }}
         </div>
         <div>
-          {{ listTime[i].time  }}
+          {{ listTime[i].time }}
         </div>
       </td>
 

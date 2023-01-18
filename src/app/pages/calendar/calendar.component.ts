@@ -247,12 +247,12 @@ export class CalendarComponent implements OnInit {
   }
 
   nextWeek() {
-    this.currentDay.setDate(this.currentDay.getDate() + 6)
+    this.currentDay.setDate(this.currentDay.getDate() + 7)
     this.renderCalendar()
     this.renderEventDate()
   }
   prevWeek() {
-    this.currentDay.setDate(this.currentDay.getDate() - 6)
+    this.currentDay.setDate(this.currentDay.getDate() - 7)
     this.renderCalendar()
     this.renderEventDate()
   }
