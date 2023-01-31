@@ -6,6 +6,7 @@ import { AppComponent } from './app/app.component';
 import { AppModule } from './app/app.module';
 import { CalendarComponent } from './app/pages/calendar/calendar.component';
 import { Pages1Component } from './app/pages/pages1/pages1.component';
+import { BlenderComponent } from './app/scene/blender/blender.component';
 import { CircleComponent } from './app/scene/circle/circle.component';
 import { LineComponent } from './app/scene/line/line.component';
 import { RotateBackgroundComponent } from './app/scene/rotate-background/rotate-background.component';
@@ -19,7 +20,8 @@ if (environment.production) {
 //   .catch(err => console.error(err));
 
 // bootstrapApplication(LineComponent)
-bootstrapApplication(CalendarComponent)
+// bootstrapApplication(CalendarComponent)
+bootstrapApplication(BlenderComponent)
 
 // bootstrapApplication(RotateBackgroundComponent)
 
